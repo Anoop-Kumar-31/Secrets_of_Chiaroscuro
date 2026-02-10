@@ -13,8 +13,32 @@ export default function VisitorTracker() {
 
         const trackVisitor = async () => {
             try {
+                // Check if visitor is new or returning using localStorage
+                const VISITOR_KEY = 'chiaroscuro_visitor';
+                const LAST_VISIT_KEY = 'chiaroscuro_last_visit';
+
+                let visitorData = null;
+                let isNewVisitor = true;
+                let visitCount = 1;
+                let lastVisit = null;
+
+                try {
+                    const storedData = localStorage.getItem(VISITOR_KEY);
+                    if (storedData) {
+                        visitorData = JSON.parse(storedData);
+                        isNewVisitor = false;
+                        visitCount = (visitorData.visitCount || 1) + 1;
+                        lastVisit = localStorage.getItem(LAST_VISIT_KEY);
+                    }
+                } catch (e) {
+                    console.log('LocalStorage not available');
+                }
+
                 // Collect device and browser information
                 const deviceInfo = {
+                    visitorType: isNewVisitor ? 'New Visitor' : 'Returning Visitor',
+                    visitCount: visitCount,
+                    lastVisit: lastVisit ? new Date(lastVisit).toLocaleString() : 'N/A',
                     device: getDeviceType(),
                     browser: getBrowserInfo(),
                     os: getOSInfo(),
@@ -71,6 +95,17 @@ export default function VisitorTracker() {
                     },
                     body: JSON.stringify(trackingData),
                 });
+
+                // Update localStorage with visit info
+                try {
+                    localStorage.setItem(VISITOR_KEY, JSON.stringify({
+                        visitCount: visitCount,
+                        firstVisit: visitorData?.firstVisit || new Date().toISOString(),
+                    }));
+                    localStorage.setItem(LAST_VISIT_KEY, new Date().toISOString());
+                } catch (e) {
+                    console.log('Could not update localStorage');
+                }
 
                 setTracked(true);
             } catch (error) {

@@ -17,10 +17,18 @@ export async function POST(request: NextRequest) {
         // Format data for Discord embed
         const embed = {
             embeds: [{
-                title: '🌐 New Visitor',
-                color: 0xD97706, // Amber-600 color
+                title: visitorData.visitorType === 'New Visitor' ? '🆕 New Visitor!' : '🔄 Returning Visitor',
+                description: visitorData.visitorType === 'Returning Visitor'
+                    ? `**Visit #${visitorData.visitCount}** • Last visit: ${visitorData.lastVisit}`
+                    : '**First time visiting the site!**',
+                color: visitorData.visitorType === 'New Visitor' ? 0x10B981 : 0xD97706, // Green for new, Amber for returning
                 timestamp: new Date().toISOString(),
                 fields: [
+                    {
+                        name: '👤 Visitor Type',
+                        value: `${visitorData.visitorType} (Visit #${visitorData.visitCount})`,
+                        inline: true
+                    },
                     {
                         name: '📍 Location',
                         value: visitorData.location
