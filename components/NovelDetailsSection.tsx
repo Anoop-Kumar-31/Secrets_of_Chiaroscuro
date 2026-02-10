@@ -5,7 +5,7 @@ import { novelDetails } from '@/data/novelDetails';
 
 export default function NovelDetailsSection() {
   return (
-    <section className="relative py-20 px-4 bg-gradient-to-b from-bg-primary via-bg-secondary to-bg-primary">
+    <section id="details" className="relative py-20 px-4 bg-gradient-to-b from-bg-primary via-bg-secondary to-bg-primary">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -21,15 +21,15 @@ export default function NovelDetailsSection() {
           <div className="w-full lg:w-2/5 flex justify-center">
             <div className="relative group">
               {/* Poster Image */}
-                <Image
-                  src={novelDetails.poster}
-                  alt={novelDetails.title}
-                  width={450}
-                  height={600}
-                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105 rounded-xl"
-                  priority
-                  quality={100}
-                />
+              <Image
+                src={novelDetails.poster}
+                alt={novelDetails.title}
+                width={450}
+                height={600}
+                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105 rounded-xl"
+                priority
+                quality={100}
+              />
             </div>
           </div>
 

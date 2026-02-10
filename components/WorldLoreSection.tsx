@@ -78,7 +78,7 @@ export default function WorldLoreSection() {
   };
 
   return (
-    <section className="relative py-20 px-4 bg-gradient-to-b from-bg-secondary via-bg-primary to-bg-secondary">
+    <section id="lore" className="relative py-20 px-4 bg-gradient-to-b from-bg-secondary via-bg-primary to-bg-secondary">
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -106,10 +106,9 @@ export default function WorldLoreSection() {
                   if (el) sectionRefs.current.set(section.id, el);
                 }}
                 data-section-id={section.id}
-                className={`overflow-hidden transition-all duration-700 relative ${
-                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}
-                style={{ 
+                className={`overflow-hidden transition-all duration-700 relative ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}
+                style={{
                   transitionDelay: `${index * 100}ms`,
                   backgroundImage: `url("${section.img}")`,
                   backgroundSize: 'cover',
@@ -122,17 +121,15 @@ export default function WorldLoreSection() {
                 {/* Dark overlay for text readability */}
                 <div className="absolute inset-0 bg-black/50 -z-10" />
                 {/* Theme-specific colored overlay - only on hover */}
-                <div 
-                  className={`absolute inset-0 ${colors.bg} -z-10 transition-opacity duration-300 ${
-                    isHovered ? 'opacity-100' : 'opacity-0'
-                  }`} 
+                <div
+                  className={`absolute inset-0 ${colors.bg} -z-10 transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'
+                    }`}
                 />
                 {/* Accordion Header */}
                 <button
                   onClick={() => toggleSection(section.id)}
-                  className={`w-full text-left px-8 py-15 flex items-center justify-between transition-all duration-300 hover:bg-white/5 cursor-pointer ${
-                    isExpanded ? colors.bg : ''
-                  }`}
+                  className={`w-full text-left px-8 py-15 flex items-center justify-between transition-all duration-300 hover:bg-white/5 cursor-pointer ${isExpanded ? colors.bg : ''
+                    }`}
                 >
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
@@ -149,9 +146,8 @@ export default function WorldLoreSection() {
 
                   {/* Expand/Collapse Icon */}
                   <svg
-                    className={`w-6 h-6 transition-transform duration-300 shrink-0 ml-4 ${
-                      isExpanded ? `rotate-180 ${colors.text}` : ''
-                    }`}
+                    className={`w-6 h-6 transition-transform duration-300 shrink-0 ml-4 ${isExpanded ? `rotate-180 ${colors.text}` : ''
+                      }`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -167,9 +163,8 @@ export default function WorldLoreSection() {
 
                 {/* Accordion Content */}
                 <div
-                  className={`overflow-hidden transition-all duration-500 ${
-                    isExpanded ? 'max-h-[800px]' : 'max-h-0'
-                  }`}
+                  className={`overflow-hidden transition-all duration-500 ${isExpanded ? 'max-h-[800px]' : 'max-h-0'
+                    }`}
                 >
                   <div className={`p-6 pt-0 border-t ${colors.border} border-opacity-20`}>
                     <pre className="text-primary leading-relaxed text-base md:text-lg font-[family-name:var(--font-heading-alt)] italic whitespace-pre-wrap text-shadow-md text-shadow-black">

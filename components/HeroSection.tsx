@@ -47,7 +47,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Blurred Background Layer */}
       <div className="absolute inset-0">
         {heroImages.map((image, index) => (
@@ -92,7 +92,7 @@ export default function HeroSection() {
       {/* Slider Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 md:left-8 z-20 p-3 rounded-full bg-black/30 hover:bg-black/50 transition-all duration-300 backdrop-blur-sm border border-white/10 hover:border-white/30 group"
+        className="absolute hidden md:block left-4 md:left-8 z-20 p-3 rounded-full bg-black/30 hover:bg-black/50 transition-all duration-300 backdrop-blur-sm border border-white/10 hover:border-white/30 group"
         aria-label="Previous slide"
       >
         <svg
@@ -107,7 +107,7 @@ export default function HeroSection() {
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 md:right-8 z-20 p-3 rounded-full bg-black/30 hover:bg-black/50 transition-all duration-300 backdrop-blur-sm border border-white/10 hover:border-white/30 group"
+        className="absolute hidden md:block right-4 md:right-8 z-20 p-3 rounded-full bg-black/30 hover:bg-black/50 transition-all duration-300 backdrop-blur-sm border border-white/10 hover:border-white/30 group"
         aria-label="Next slide"
       >
         <svg
@@ -174,7 +174,7 @@ export default function HeroSection() {
               document.getElementById("characters")?.scrollIntoView({ behavior: "smooth" });
             }}
           >
-            Explore the World
+            Explore More
           </button>
         </div>
       </div>
