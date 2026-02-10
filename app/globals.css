@@ -1,26 +1,298 @@
+/* ============================================
+   CHIAROSCURO - Dark Fantasy Design System
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @import "tailwindcss";
 
+/* ============================================
+   CUSTOM CSS VARIABLES - CHIAROSCURO PALETTE
+   ============================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Core Dark Fantasy Colors */
+  --bg-primary: #050505;
+  --bg-secondary: #0b0b0b;
+  --text-primary: #e5e5e5;
+  --text-muted: #9a9a9a;
+  
+  /* Accent Colors */
+  --accent-crimson: #8b0000;
+  --accent-ember: #ff6a00;
+  --accent-gold: #dfa934;
+  
+  /* Functional Colors */
+  --border-color: rgba(229, 229, 229, 0.1);
+  --card-bg: rgba(11, 11, 11, 0.8);
+  --overlay-dark: rgba(5, 5, 5, 0.85);
+  
+  /* Typography */
+  --font-heading: 'Cinzel', serif;
+  --font-heading-alt: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Shadows & Glows */
+  --glow-crimson: 0 0 20px rgba(139, 0, 0, 0.5);
+  --glow-ember: 0 0 25px rgba(255, 106, 0, 0.4);
+  --glow-gold: 0 0 15px rgba(201, 162, 77, 0.3);
+  
+  /* Animation Durations */
+  --duration-fast: 200ms;
+  --duration-normal: 400ms;
+  --duration-slow: 800ms;
+  --duration-cinematic: 1200ms;
+  
+  /* Radius */
+  --radius: 0.5rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ============================================
+   BASE STYLES
+   ============================================ */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Typography Defaults */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+  }
+  
+  h1 {
+    font-size: clamp(2.5rem, 5vw, 5rem);
+  }
+  
+  h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+  }
+  
+  h3 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+  }
+  
+  p {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+    line-height: 1.8;
+    color: var(--text-primary);
+  }
+  
+  /* Links */
+  a {
+    color: var(--accent-ember);
+    text-decoration: none;
+    transition: color var(--duration-fast) ease;
+  }
+  
+  a:hover {
+    color: var(--accent-gold);
+  }
+  
+  /* Selection */
+  ::selection {
+    background-color: var(--accent-crimson);
+    color: var(--text-primary);
+  }
+  
+  ::-moz-selection {
+    background-color: var(--accent-crimson);
+    color: var(--text-primary);
+  }
+  
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--accent-crimson);
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-ember);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+@layer utilities {
+  /* Text Glow Effects */
+  .text-glow-crimson {
+    text-shadow: var(--glow-crimson);
+  }
+  
+  .text-glow-ember {
+    text-shadow: var(--glow-ember);
+  }
+  
+  .text-glow-gold {
+    text-shadow: var(--glow-gold);
+  }
+  
+  /* Background Overlays */
+  .overlay-dark {
+    background: var(--overlay-dark);
+  }
+  
+  .bg-gradient-dark {
+    background: linear-gradient(
+      180deg,
+      rgba(5, 5, 5, 0) 0%,
+      rgba(5, 5, 5, 0.8) 50%,
+      rgba(5, 5, 5, 1) 100%
+    );
+  }
+  
+  /* Cinematic Animations */
+  .animate-fade-in {
+    animation: fadeIn var(--duration-cinematic) ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp var(--duration-slow) ease-out;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn var(--duration-slow) ease-out;
+  }
+  
+  /* Glass Morphism */
+  .glass-card {
+    background: rgba(11, 11, 11, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(229, 229, 229, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* ============================================
+   KEYFRAME ANIMATIONS
+   ============================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes ember {
+  0%, 100% {
+    opacity: 0.6;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+}
+
+/* ============================================
+   COMPONENT-SPECIFIC STYLES
+   ============================================ */
+
+@layer components {
+  /* Dark Fantasy Button */
+  .btn-primary {
+    background: linear-gradient(135deg, var(--accent-crimson), var(--accent-ember));
+    color: var(--text-primary);
+    padding: 0.875rem 2rem;
+    border-radius: var(--radius);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all var(--duration-normal) ease;
+    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.4);
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    box-shadow: var(--glow-crimson);
+    transform: translateY(-2px);
+  }
+  
+  /* Royal Gold Button */
+  .btn-gold {
+    background: var(--accent-gold);
+    color: var(--bg-primary);
+    padding: 0.875rem 2rem;
+    border-radius: var(--radius);
+    /* font-family: var(--font-heading); */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all var(--duration-normal) ease;
+  }
+  
+  .btn-gold:hover {
+    box-shadow: var(--glow-gold);
+    transform: translateY(-2px);
+  }
+  
+  /* Section Divider */
+  .section-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--accent-ember) 50%,
+      transparent 100%
+    );
+    margin: 4rem 0;
+  }
 }
