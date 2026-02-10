@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import VisitorTracker from "@/components/VisitorTracker";
 
 export const metadata: Metadata = {
   title: "CHIAROSCURO - The Secrets of Light & Shadow",
@@ -27,6 +28,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
+        {/* This is strictly for analytical purpose only publically avaliable info is collected */}
+        <VisitorTracker />
         {children}
       </body>
     </html>
