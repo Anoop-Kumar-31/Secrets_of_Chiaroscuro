@@ -23,14 +23,14 @@ export default function Footer() {
     };
 
     return (
-        <footer className="relative bg-gradient-to-b from-bg-secondary to-black border-t border-amber-700/20">
+        <footer className="relative bg-linear-to-b from-bg-secondary to-black border-t border-amber-700/20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
                 {/* Main Footer Content */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
 
                     {/* About Section */}
                     <div className="text-center md:text-left">
-                        <h3 className="text-amber-600 text-2xl font-[family-name:var(--font-heading)] mb-4">
+                        <h3 className="text-amber-600 text-2xl font-(family-name:--font-heading) mb-4">
                             The Secrets of CHIAROSCURO
                         </h3>
                         <p className="text-muted text-sm leading-relaxed mb-4 italic">
@@ -42,7 +42,7 @@ export default function Footer() {
 
                     {/* Reading Platforms */}
                     <div className="text-center">
-                        <h4 className="text-primary text-xl font-[family-name:var(--font-heading)] mb-4 uppercase tracking-wider">
+                        <h4 className="text-primary text-xl font-(family-name:--font-heading) mb-4 uppercase tracking-wider">
                             Read Now
                         </h4>
                         <div className="flex flex-col gap-3">
@@ -81,10 +81,10 @@ export default function Footer() {
 
                     {/* Author Info */}
                     <div className="text-center md:text-right">
-                        <h4 className="text-primary text-lg font-[family-name:var(--font-heading)] uppercase tracking-wider">
+                        <h4 className="text-primary text-lg font-(family-name:--font-heading) uppercase tracking-wider">
                             Author
                         </h4>
-                        <p className="text-white text-xl font-[family-name:var(--font-heading-alt)] mb-4 italic">
+                        <p className="text-white text-xl font-(family-name:--font-heading-alt) mb-4 italic">
                             Pen Name - Ak31
                         </p>
                         <p className="text-muted text-sm italic mb-4">
@@ -120,7 +120,7 @@ export default function Footer() {
             {/* Scroll to Top Button */}
             <button
                 onClick={scrollToTop}
-                className={`fixed bottom-8 right-8 z-50 p-4 rounded-full bg-gradient-to-br from-amber-700 to-yellow-700 hover:from-amber-600 hover:to-yellow-600 text-white shadow-lg hover:shadow-amber-700/50 transition-all duration-300 ${showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16 pointer-events-none'
+                className={`fixed bottom-8 right-8 z-50 p-4 rounded-full bg-linear-to-br from-amber-700 to-yellow-700 hover:from-amber-600 hover:to-yellow-600 text-white shadow-lg hover:shadow-amber-700/50 transition-all duration-300 ${showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16 pointer-events-none'
                     }`}
                 aria-label="Scroll to top"
             >
@@ -140,7 +140,7 @@ export default function Footer() {
             </button>
 
             {/* Decorative gradient overlay */}
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-700/50 to-transparent" />
+            <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-amber-700/50 to-transparent" />
         </footer>
     );
 }

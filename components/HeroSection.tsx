@@ -47,7 +47,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden mb-10">
       {/* Blurred Background Layer */}
       <div className="absolute inset-0">
         {heroImages.map((image, index) => (
@@ -125,7 +125,7 @@ export default function HeroSection() {
         <h1 className="text-glow-gold mb-6">
           The Secrets of CHIAROSCURO
         </h1>
-        <p className="text-xl md:text-2xl text-muted mb-8 font-[family-name:var(--font-heading-alt)] italic">
+        <p className="text-xl md:text-2xl text-muted mb-8 font-(family-name:--font-heading-alt) italic">
           The Fated Heir of Shadows and Light
         </p>
         <p className="max-w-2xl mx-auto text-md leading-relaxed mb-10">

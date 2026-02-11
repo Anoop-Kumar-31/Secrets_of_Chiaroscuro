@@ -117,13 +117,13 @@ export default function CharactersSection() {
   return (
     [
       <section className='w-screen flex items-center justify-center'>
-        <p className='text-4xl font-bold md:text-5xl font-[family-name:var(--font-heading)] mb-4'>Characters</p>
+        <p className='text-4xl font-bold md:text-5xl font-(family-name:--font-heading) mb-4'>Characters</p>
       </section>
       ,
       <section
         id="characters"
         ref={sectionRef}
-        className="relative bg-gradient-to-b from-bg-primary via-bg-secondary to-bg-primary"
+        className="relative bg-linear-to-b from-bg-primary via-bg-secondary to-bg-primary"
         style={{ height: isMobile ? '100vh' : `${characters.length * 110}vh` }}
       >
         {/* Sticky Container */}
@@ -155,7 +155,7 @@ export default function CharactersSection() {
                       drop-shadow-[0_0_30px_rgba(139,0,0,0.5)]
                     `}
                   />
-                  <div className='absolute h-full w-full bg-gradient-to-b from-transparent from-75% to-black z-40' />
+                  <div className='absolute h-full w-full bg-linear-to-b from-transparent from-75% to-black z-40' />
                 </div>
               </div>
 
@@ -163,17 +163,17 @@ export default function CharactersSection() {
               <div className="w-full md:w-1/2 md:h-full flex items-center justify-center px-4 md:pl-12 lg:pl-20 md:pr-0">
                 <div className="glass-card p-6 md:p-12 max-w-xl w-full relative backdrop-blur-2xl bg-white/5 z-50">
                   {/* Character Number */}
-                  <div className="absolute -top-3 -left-3 md:-top-4 md:-left-4 w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-accent-crimson to-accent-ember flex items-center justify-center text-lg md:text-2xl font-bold">
+                  <div className="absolute -top-3 -left-3 md:-top-4 md:-left-4 w-12 h-12 md:w-16 md:h-16 rounded-full bg-linear-to-br from-accent-crimson to-accent-ember flex items-center justify-center text-lg md:text-2xl font-bold">
                     {String(index + 1).padStart(2, '0')}
                   </div>
 
                   {/* Name */}
-                  <h2 className={`${themeShadow[character.theme]?.text} text-shadow-md text-2xl md:text-4xl lg:text-5xl mb-2 md:mb-4 font-[family-name:var(--font-heading)]`}>
+                  <h2 className={`${themeShadow[character.theme]?.text} text-shadow-md text-2xl md:text-4xl lg:text-5xl mb-2 md:mb-4 font-(family-name:--font-heading)`}>
                     {character.name}
                   </h2>
 
                   {/* Title */}
-                  <p className={`${themeShadow[character.theme]?.text} text-shadow-md text-base md:text-xl lg:text-2xl mb-4 md:mb-6 font-[family-name:var(--font-heading-alt)] italic`}>
+                  <p className={`${themeShadow[character.theme]?.text} text-shadow-md text-base md:text-xl lg:text-2xl mb-4 md:mb-6 font-(family-name:--font-heading-alt) italic`}>
                     {character.title}
                   </p>
 
@@ -205,7 +205,7 @@ export default function CharactersSection() {
 
               {/* Right Side - Character Image */}
               <div className="hidden md:flex h-full items-center justify-end relative w-fit overflow-visible md:w-1/2">
-                <div className="relative h-full flex items-center justify-end overflow-visible overflow-hidden">
+                <div className="relative h-full flex items-center justify-end overflow-visible">
                   <img
                     src={character.image}
                     alt={character.name}
@@ -222,7 +222,7 @@ export default function CharactersSection() {
                   `}
                   />
 
-                  <div className='absolute h-full w-full bg-gradient-to-b from-transparent from-75% to-black z-40' />
+                  <div className='absolute h-full w-full bg-linear-to-b from-transparent from-75% to-black z-40' />
                 </div>
               </div>
 

@@ -5,11 +5,11 @@ import { novelDetails } from '@/data/novelDetails';
 
 export default function NovelDetailsSection() {
   return (
-    <section id="details" className="relative py-20 px-4 bg-gradient-to-b from-bg-primary via-bg-secondary to-bg-primary">
+    <section id="details" className="relative py-20 px-4 bg-linear-to-b from-bg-primary via-bg-secondary to-bg-primary">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-[family-name:var(--font-heading)] mb-4">
+          <h2 className="text-4xl md:text-5xl font-(family-name:--font-heading) mb-4">
             About the Novel
           </h2>
           <div className="section-divider my-8" />
@@ -37,10 +37,10 @@ export default function NovelDetailsSection() {
           <div className="w-full lg:w-3/5 space-y-4">
             {/* Title & Author */}
             <div>
-              <h1 className="text-3xl md:text-4xl lg:text-3xl font-[family-name:var(--font-heading)] text-shadow-amber-700 mb-0">
+              <h1 className="text-4xl font-(family-name:--font-heading) text-shadow-amber-700 mb-0">
                 {novelDetails.title}
               </h1>
-              <p className="text-xl md:text-xl lg:text-xl text-accent-ember font-[family-name:var(--font-heading-alt)] italic mb-2">
+              <p className="text-xl text-accent-ember font-(family-name:--font-heading-alt) italic mb-2">
                 {novelDetails.subtitle}
               </p>
               <p className="text-muted text-sm">by <span className="text-amber-700 italic">{novelDetails.author}</span></p>
@@ -80,10 +80,10 @@ export default function NovelDetailsSection() {
                     label: 'Genre',
                     value: novelDetails.metadata.genre[0],
                     color: 'text-gray-400',
-                    className: 'col-span-2 md:col-span-1',
+
                   },
                 ].map((item, index) => (
-                  <div key={index} className={item.className || ''}>
+                  <div key={index}>
                     <p className="text-muted text-xs font-extrabold uppercase tracking-wider mb-1">{item.label}</p>
                     {item.suffix ? (
                       <div className="flex items-center gap-2">
@@ -104,7 +104,7 @@ export default function NovelDetailsSection() {
 
             {/* Synopsis */}
             <div>
-              <h3 className="text-xl lg:text-xl font-[family-name:var(--font-heading)] text-shadow-amber-700 mb-2">
+              <h3 className="text-xl lg:text-xl font-(family-name:--font-heading) text-shadow-amber-700 mb-2">
                 Synopsis:
               </h3>
               <div className="space-y-3 text-primary leading-relaxed">
@@ -118,7 +118,7 @@ export default function NovelDetailsSection() {
 
             {/* Tags */}
             <div>
-              <h3 className="text-xl font-[family-name:var(--font-heading)] text-muted mb-2">
+              <h3 className="text-xl font-(family-name:--font-heading) text-muted mb-2">
                 Tags:
               </h3>
               <div className="flex flex-wrap gap-3">
@@ -135,7 +135,7 @@ export default function NovelDetailsSection() {
 
             {/* Reading Platforms */}
             <div>
-              <h3 className="text-xl lg:text-xl font-[family-name:var(--font-heading)] text-shadow-amber-700 mb-2">
+              <h3 className="text-xl lg:text-xl font-(family-name:--font-heading) text-shadow-amber-700 mb-2">
                 Read Now:
               </h3>
               <div className="flex flex-wrap gap-4">
@@ -145,7 +145,7 @@ export default function NovelDetailsSection() {
                     href={platform.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-amber-700/20 to-amber-500/20 border border-amber-600/50 rounded-lg hover:border-amber-600 hover:from-amber-600/20 hover:to-amber-500/20 transition-all duration-300 group"
+                    className="flex items-center gap-3 px-6 py-3 bg-linear-to-r from-amber-700/20 to-amber-500/20 border border-amber-600/50 rounded-lg hover:border-amber-600 hover:from-amber-600/20 hover:to-amber-500/20 transition-all duration-300 group"
                   >
                     <img
                       src={platform.logo}

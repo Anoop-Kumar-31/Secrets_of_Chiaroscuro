@@ -43,7 +43,7 @@ But fate has already chosen its heir.
         genre: ["Dark Fantasy", "Supernatural", "Romance", "Action"],
         status: "Ongoing",
         chapters: 50,
-        published: "2024",
+        published: "2025",
         rating: 4.6,
         views: "5K+",
         seasons: 2,

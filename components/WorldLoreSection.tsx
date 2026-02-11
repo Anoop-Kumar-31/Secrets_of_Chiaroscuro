@@ -78,14 +78,14 @@ export default function WorldLoreSection() {
   };
 
   return (
-    <section id="lore" className="relative py-20 px-4 bg-gradient-to-b from-bg-secondary via-bg-primary to-bg-secondary">
+    <section id="lore" className="relative py-20 px-4 bg-linear-to-b from-bg-secondary via-bg-primary to-bg-secondary">
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-glow-gold text-4xl md:text-5xl font-[family-name:var(--font-heading)] mb-4">
+          <h2 className="text-glow-gold text-4xl md:text-5xl font-(family-name:--font-heading) mb-4">
             World & Lore
           </h2>
-          <p className="text-muted text-lg md:text-xl font-[family-name:var(--font-heading-alt)] italic">
+          <p className="text-muted text-lg md:text-xl font-(family-name:--font-heading-alt) italic">
             Uncover the Secrets of CHIAROSCURO
           </p>
           <div className="section-divider my-8" />
@@ -134,7 +134,7 @@ export default function WorldLoreSection() {
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
                       <h3
-                        className={`text-2xl md:text-3xl font-[family-name:var(--font-heading)] ${colors.glow} text-shadow-[0_0_10px_rgba(0,0,0,1)] `}
+                        className={`text-2xl md:text-3xl font-(family-name:--font-heading) ${colors.glow} text-shadow-[0_0_10px_rgba(0,0,0,1)] `}
                       >
                         {section.title}
                       </h3>
@@ -167,7 +167,7 @@ export default function WorldLoreSection() {
                     }`}
                 >
                   <div className={`p-6 pt-0 border-t ${colors.border} border-opacity-20`}>
-                    <pre className="text-primary leading-relaxed text-base md:text-lg font-[family-name:var(--font-heading-alt)] italic whitespace-pre-wrap text-shadow-md text-shadow-black">
+                    <pre className="text-primary leading-relaxed text-base md:text-lg font-(family-name:--font-heading-alt) italic whitespace-pre-wrap text-shadow-md text-shadow-black">
                       {section.content}
                     </pre>
                   </div>
