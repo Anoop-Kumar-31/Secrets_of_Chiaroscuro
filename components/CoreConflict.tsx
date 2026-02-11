@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 
 export default function CoreConflict() {
   const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -23,13 +24,24 @@ export default function CoreConflict() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768); // md breakpoint
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <section
       ref={sectionRef}
       className="relative py-20 md:py-32 px-6 overflow-hidden"
       style={{
         backgroundImage: "url('/images/fate.png')",
-        backgroundSize: "100% 100%",
+        backgroundSize: isMobile ? "cover" : "100% 100%",
         backgroundPosition: "center",
       }}
     >
