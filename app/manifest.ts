@@ -2,8 +2,8 @@ import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
     return {
-        name: 'CHIAROSCURO - The Secrets of Light & Shadow',
-        short_name: 'CHIAROSCURO',
+        name: 'The Secrets of CHIAROSCURO - The Fated Heir of Shadows and Light',
+        short_name: 'TSOC',
         description: 'A dark fantasy tale of supernatural royalty, forbidden love, and ancient betrayals. Enter a world where light and shadow collide.',
         start_url: '/',
         display: 'standalone',
