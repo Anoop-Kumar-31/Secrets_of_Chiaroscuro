@@ -1,8 +1,6 @@
-# Allow all search engines to crawl the site
+# Allow all crawlers to access all content
 User-agent: *
 Allow: /
-Disallow: /api/
-Disallow: /_next/
 
 # Sitemap location
 Sitemap: https://secrets-of-chiaroscuro.vercel.app/sitemap.xml
