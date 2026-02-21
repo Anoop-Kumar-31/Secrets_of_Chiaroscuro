@@ -3,6 +3,7 @@ import CoreConflict from '@/components/CoreConflict';
 import CharactersSection from '@/components/CharactersSection';
 import WorldLoreSection from '@/components/WorldLoreSection';
 import NovelDetailsSection from '@/components/NovelDetailsSection';
+import ReaderFeedback from '@/components/ReaderFeedback';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <NovelDetailsSection />
       <CharactersSection />
       <WorldLoreSection />
+      <ReaderFeedback />
 
       {/* <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">

@@ -167,15 +167,24 @@ export default function HeroSection() {
           </div>
 
           {/* Secondary CTA */}
-          {/* onclick send user to div with id "characters"*/}
-          <button
-            className="btn-primary text-white"
-            onClick={() => {
-              document.getElementById("characters")?.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            Explore More
-          </button>
+          <div className="flex gap-4">
+            <button
+              className="btn-primary text-white"
+              onClick={() => {
+                document.getElementById("characters")?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Explore More
+            </button>
+            <button
+              className="btn-gold"
+              onClick={() => {
+                document.getElementById("feedback")?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Message Me
+            </button>
+          </div>
         </div>
       </div>
 
