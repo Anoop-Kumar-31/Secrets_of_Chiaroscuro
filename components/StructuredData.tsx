@@ -1,12 +1,12 @@
 import React from 'react';
 
 export default function StructuredData() {
-    const baseUrl = 'https://chiaroscuro-novel.com'; // Update with your actual domain
+    const baseUrl = 'https://secrets-of-chiaroscuro.vercel.app';
 
     const websiteSchema = {
         '@context': 'https://schema.org',
         '@type': 'WebSite',
-        name: 'CHIAROSCURO - The Secrets of Light & Shadow',
+        name: 'The Secrets of CHIAROSCURO - The Fated Heir of Shadows and Light',
         description: 'A dark fantasy tale of supernatural royalty, forbidden love, and ancient betrayals. Enter a world where light and shadow collide.',
         url: baseUrl,
         potentialAction: {
@@ -22,15 +22,15 @@ export default function StructuredData() {
     const bookSchema = {
         '@context': 'https://schema.org',
         '@type': 'Book',
-        name: 'CHIAROSCURO',
-        alternateName: 'The Secrets of Light & Shadow',
+        name: 'The Secrets of CHIAROSCURO',
+        alternateName: 'The Fated Heir of Shadows and Light',
         description: 'A dark fantasy tale of supernatural royalty, forbidden love, and ancient betrayals. Enter a world where light and shadow collide.',
         genre: ['Dark Fantasy', 'Urban Fantasy', 'Supernatural Fiction', 'Romance'],
         bookFormat: 'https://schema.org/EBook',
         inLanguage: 'en-US',
         author: {
             '@type': 'Person',
-            name: 'CHIAROSCURO'
+            name: 'Ak31'
         },
         url: baseUrl,
         about: {
@@ -38,7 +38,7 @@ export default function StructuredData() {
             name: 'Supernatural Romance',
             description: 'A story about vampires, angels, and the collision of light and shadow'
         },
-        keywords: 'dark fantasy, urban fantasy, supernatural, vampire, angel, forbidden love, fantasy novel'
+        keywords: 'dark fantasy, urban fantasy, supernatural, vampire, angel, forbidden love, fantasy novel, CHIAROSCURO'
     };
 
     const organizationSchema = {

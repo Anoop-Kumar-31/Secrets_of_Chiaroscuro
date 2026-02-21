@@ -136,21 +136,8 @@ export default function HeroSection() {
 
         <div className="flex flex-col gap-6 items-center ">
           {/* Reading Platform Options */}
-          <div className="flex gap-5 justify-center flex-wrap">
-            <p className="text-[#dfa934] underline italic">Read on:</p>
-            <a
-              href="https://www.wattpad.com/story/395006077-the-secrets-of-chiaroscuro-the-fated-heir-of"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-white hover:text-amber-500"
-            >
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/3670/3670197.png"
-                alt="Wattpad"
-                className="w-8 h-8"
-              />
-              Wattpad
-            </a>
+          <div className="flex md:flex-row flex-col gap-5 justify-center flex-wrap">
+            <p className="text-white font-bold underline italic">Read on:</p>
             <a
               href="https://www.royalroad.com/fiction/125859/the-secrets-of-chiaroscuro-the-fated-heir-of-shadows"
               target="_blank"
@@ -164,10 +151,23 @@ export default function HeroSection() {
               />
               Royal Road
             </a>
+            <a
+              href="https://www.wattpad.com/story/395006077-the-secrets-of-chiaroscuro-the-fated-heir-of"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-white hover:text-amber-500"
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/3670/3670197.png"
+                alt="Wattpad"
+                className="w-8 h-8"
+              />
+              Wattpad
+            </a>
           </div>
 
           {/* Secondary CTA */}
-          <div className="flex gap-4">
+          <div className="flex md:flex-row flex-col gap-4">
             <button
               className="btn-primary text-white"
               onClick={() => {
@@ -177,12 +177,12 @@ export default function HeroSection() {
               Explore More
             </button>
             <button
-              className="btn-gold"
+              className="btn-gold bg-yellow-600 text-yellow-50"
               onClick={() => {
                 document.getElementById("feedback")?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              Message Me
+              Feedback / Message
             </button>
           </div>
         </div>
